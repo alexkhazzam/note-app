@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 exports.Authenticate = class {
   constructor(user, pass) {
@@ -9,7 +9,7 @@ exports.Authenticate = class {
     let verified = false;
     let tokenId = null;
     const registeredAccounts = fs.readFileSync(
-      path.join(__dirname, "../", "data", "accounts.json")
+      path.join(__dirname, '../', 'data', 'accounts.json')
     );
     const parsedAccounts = [...JSON.parse(registeredAccounts)];
     parsedAccounts.forEach((acc) => {
