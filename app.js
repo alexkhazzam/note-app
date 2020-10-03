@@ -10,9 +10,6 @@ dotenv.config({ path: './config.env' });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(Express.static(path.join(__dirname, 'public', 'css')));
 
-app.use('/', (req, res, next) => {
-  res.redirect('/register');
-});
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -24,6 +21,9 @@ app.use(loginRoutes);
 app.use(registerRoutes);
 app.use(adminRoutes);
 
+app.use('/', (req, res, next) => {
+  res.redirect('/register');
+});
 app.use((req, res, next) => {
   res.status(404).send('<h1>Page not found!</h1>');
 });
