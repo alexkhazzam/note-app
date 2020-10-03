@@ -106,3 +106,130 @@ body {
 .main-header__item-link:hover {
   color: black;
 }
+
+.main-header__section {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  text-align: center;
+}
+
+.main-header__success {
+  font-size: 3rem;
+  margin-bottom: 5%;
+}
+
+.main-header__credentials {
+  color: black !important;
+}
+
+.main-header__credentials-header {
+  color: white;
+}
+
+.main-header__credential-wrapper {
+  border: 2px solid rgb(255, 204, 0);
+  width: fit-content;
+  padding: 20px;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.main-header__cta-btn a,
+.main-notes__header-btn a {
+  color: white;
+}
+
+.main-header__cta-btn a:hover,
+.main-notes__header-btn:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.main-header__cta-btn {
+  display: block !important;
+  margin: auto;
+  margin-bottom: 0.5% !important;
+  width: 200px !important;
+  height: 50px !important;
+}
+
+.main-header__cta-btn:focus {
+  display: block !important;
+  outline: none !important;
+}
+
+.main-notes {
+  text-align: center;
+}
+
+.main-notes__note {
+  border: 2px solid rgb(255, 204, 0);
+  width: fit-content;
+  padding: 20px;
+  margin: auto;
+  display: inline-block;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  text-align: center;
+}
+
+.main-notes__note h1 {
+  color: white;
+  text-decoration: underline;
+}
+
+.main-notes__header {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5%;
+}
+
+.main-notes__header-btn:focus {
+  outline: none !important;
+}
+
+.main-notes__header-btn a {
+  color: white;
+}
+
+.main-notes__header-btn a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.main-note__section {
+  text-align: center;
+}
+
+.main-note__section-note {
+  border: 2px solid rgb(255, 204, 0);
+  width: 50%;
+  padding: 10px;
+  height: fit-content;
+  margin: auto;
+  margin-bottom: 2%;
+}
+
+.main-note__section-btn {
+  width: 200px !important;
+  height: 50px !important;
+  color: white !important;
+  padding: 0px !important;
+}
+
+.main-note__section-btn a {
+  height: 100%;
+  color: white !important;
+}
+
+.main-note__section-btn a:hover {
+  color: white !important;
+  text-decoration: none;
+}
+
+.main-note__section-btn:focus {
+  outline: none !important;
+}

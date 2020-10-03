@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include("../includes/styles.ejs") %>
+  </head>
+  <body>
+    <header class="main-header">
+      <navbar class="main-header__navbar">
+        <ul class="main-header__items">
+          <li class="main-header__item">
+            <a
+              class="main-header__item-link"
+              href="/secure/add-note/<%= token %>"
+              >Add Note</a
+            >
+          </li>
+          <li class="main-header__item">
+            <a
+              class="main-header__item-link"
+              href="/secure/notes/<%= token %>"
+            >
+            Notes
+          </li>
+          <li class="main-header__item">
+            <a
+              class="main-header__item-link"
+              href="/secure/home/<%= token %>"
+              >Home</a
+            >
+          </li>
+          <li class="main-header__item">
+            <a class="main-header__item-link" href="/login">Logout</a>
+          </li>
+        </ul>
+      </navbar>
+    </header>
+    <main class="main">
+      <div class="main-header__section">
+        <h1 class="main-header__success">Logged In Successfully!</h1>
+        <h2 class="main-header__credentials-header">Your Credentials: </h2>
+        <div class="main-header__credential-wrapper">
+          <h3 class="main-header__credentials">Username: <%= username %></h3>
+          <h3 class="main-header__credentials">Password: <%= password %></h3>
+        </div>
+      </div>
+      <button type="button" class="btn btn-info main-header__cta-btn"><a href="/secure/add-note/<%= token %>">Start Taking Notes!</a></button>
+      <button type="button" class="btn btn-info main-header__cta-btn"><a href="/login">Logout :(</a></button>
+    </main>
+  </body>
+</html>

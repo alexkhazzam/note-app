@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <%- include("../includes/styles.ejs") %>
+  </head>
+  <body>
+    <header class="main-header">
+      <navbar class="main-header__navbar">
+        <ul class="main-header__items">
+          <li class="main-header__item">
+            <a
+              class="main-header__item-link"
+              href="/secure/add-note/<%= token %>"
+              >Add Note</a
+            >
+          </li>
+          <li class="main-header__item">
+            <a
+              class="main-header__item-link"
+              href="/secure/notes/<%= token %>"
+            >
+            Notes
+          </li>
+          <li class="main-header__item">
+            <a
+              class="main-header__item-link"
+              href="/secure/home/<%= token %>"
+              >Home</a
+            >
+          </li>
+          <li class="main-header__item">
+            <a class="main-header__item-link" href="/login">Logout</a>
+          </li>
+        </ul>
+      </navbar>
+    </header>
+    <h1 class="main-notes__header">Your Notes</h1>
+    <main class="main-notes">
+        <% if (allNotes.length !== 0) { %>
+            <% for (let notes of allNotes) { %>
+                <div class="main-notes__note">
+                    <h1><%= notes.title %></h1>
+                    <h3><%= notes.date %></h3>
+                    <h3><%= notes.subject %></h3>
+                    <img src=<%= notes.notesImgUrl %> /> 
+                    <button type="button" class="btn btn-info main-notes__header-btn"><a href="/secure/note/<%= token %>/<%= notes.noteId %>">Get Info</a></button>
+                </div>
+            <% } %>
+        <% } else { %>
+            <h2>No Notes Found :(</h2>
+        <% } %>
+    </main>
+  </body>
+</html>

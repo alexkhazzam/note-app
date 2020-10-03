@@ -2,12 +2,7 @@
 <html>
   <head>
     <title>Bootstrap 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/add-note.css" />
-    <link rel="stylesheet" href="/bootstrap-responsive.css" ; />
-    <link rel="stylesheet" href="/bootstrap-responsive.min.css" ; />
-    <link rel="stylesheet" href="/bootstrap.css" ; />
-    <link rel="stylesheet" href="/bootstrap.min.css" ; />
+    <%- include("../includes/styles.ejs") %>
   </head>
   <body>
     <div class="add-note__wrapper">
@@ -15,13 +10,26 @@
         <navbar class="main-header__navbar">
           <ul class="main-header__items">
             <li class="main-header__item">
-              <a class="main-header__item-link">Add Note</a>
+              <a
+                class="main-header__item-link"
+                href="/secure/add-note/<%= token %>"
+                >Add Note</a
+              >
             </li>
             <li class="main-header__item">
-              <a class="main-header__item-link">Notes</a>
+              <a
+                class="main-header__item-link"
+                href="/secure/notes/<%= token %>"
+                >Notes</a
+              >
             </li>
             <li class="main-header__item">
-              <a class="main-header__item-link">Logout</a>
+              <a class="main-header__item-link" href="/secure/home/<%= token %>"
+                >Home</a
+              >
+            </li>
+            <li class="main-header__item">
+              <a class="main-header__item-link" href="/login">Logout</a>
             </li>
           </ul>
         </navbar>
@@ -29,7 +37,7 @@
       <div class="add-note__form-wrapper">
         <form
           class="add-note__form"
-          action="/secure/<%= token %>"
+          action="/secure/add-note/<%= token %>"
           method="POST"
         >
           <input

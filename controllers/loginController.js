@@ -12,7 +12,7 @@ exports.getSecureRoute = (req, res, next) => {
   );
   const verified = authorizeUser.authCredentials();
   if (verified.verified && verified.tokenId !== null) {
-    res.redirect(`/secure/${verified.tokenId}`);
+    res.redirect(`/secure/home/${verified.tokenId}`);
   } else {
     return res.redirect('/bad-login');
   }

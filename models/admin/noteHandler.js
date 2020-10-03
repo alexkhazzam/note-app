@@ -2,13 +2,14 @@ const fs = require('fs');
 const path = require('path');
 
 exports.NoteHandler = class {
-  constructor(title, note, subject, token, imgUrl, date) {
+  constructor(title, note, subject, token, imgUrl, date, noteId) {
     this.title = title;
     this.subject = subject;
     this.note = note;
     this.token = token;
     this.noteUrl = imgUrl;
     this.date = date;
+    this.noteId = noteId;
   }
   storeInformation() {
     console.log(this.date);
@@ -38,5 +39,52 @@ exports.NoteHandler = class {
         }
       }
     );
+  }
+  fetchCredentials() {
+    let dataObj = {};
+    const userData = fs.readFileSync(
+      path.join(__dirname, '../', '../', 'data', 'accounts.json')
+    );
+    const parsedUserData = [...JSON.parse(userData)];
+    console.log;
+    parsedUserData.forEach((acc) => {
+      if (acc.id === this.token) {
+        dataObj = { ...acc };
+      }
+    });
+    return dataObj;
+  }
+  fetchAllNotes() {
+    let noteArr = [];
+    const userData = fs.readFileSync(
+      path.join(__dirname, '../', '../', 'data', 'accounts.json')
+    );
+    const parsedUserData = [...JSON.parse(userData)];
+    console.log;
+    parsedUserData.forEach((acc) => {
+      if (acc.id === this.token) {
+        noteArr = [...acc.noteInformation];
+      }
+    });
+    return noteArr;
+  }
+  fetchNoteContent() {
+    let noteInfo = null;
+    let correctNote = null;
+    const noteData = fs.readFileSync(
+      path.join(__dirname, '../', '../', 'data', 'accounts.json')
+    );
+    const parsedNoteData = [...JSON.parse(noteData)];
+    parsedNoteData.forEach((account) => {
+      if (account.id === this.token) {
+        correctNote = [...account.noteInformation];
+      }
+    });
+    correctNote.forEach((note) => {
+      if (note.noteId == this.noteId) {
+        noteInfo = note.note;
+      }
+    });
+    return noteInfo;
   }
 };

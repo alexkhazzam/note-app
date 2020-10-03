@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include("../includes/styles.ejs") %>
+  </head>
+  <body>
+    <header class="main-header">
+      <navbar class="main-header__navbar">
+        <ul class="main-header__items">
+          <li class="main-header__item">
+            <a
+              class="main-header__item-link"
+              href="/secure/add-note/<%= token %>"
+              >Add Note</a
+            >
+          </li>
+          <li class="main-header__item">
+            <a class="main-header__item-link" href="/secure/notes/<%= token %>"
+              >Notes</a
+            >
+          </li>
+          <li class="main-header__item">
+            <a class="main-header__item-link" href="/secure/home/<%= token %>"
+              >Home</a
+            >
+          </li>
+          <li class="main-header__item">
+            <a class="main-header__item-link" href="/login">Logout</a>
+          </li>
+        </ul>
+      </navbar>
+    </header>
+    <main class="main-note__section">
+      <p type="text" readonly class="main-note__section-note"><%= note %></p>
+      <button type="btn" class="btn btn-info main-note__section-btn">
+        <a href="/secure/notes/<%= token %>">Back to Notes</a>
+      </button>
+    </main>
+  </body>
+</html>
