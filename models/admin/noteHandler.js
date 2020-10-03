@@ -82,8 +82,7 @@ exports.NoteHandler = class {
     });
     correctNote.forEach((note) => {
       if (note.noteId == this.noteId) {
-        noteInfo = note.subject;
-        console.log(noteInfo);
+        noteInfo = note.note;
       }
     });
     return noteInfo;

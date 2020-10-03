@@ -44,7 +44,7 @@
                 <div class="main-notes__note">
                     <h1><%= notes.title %></h1>
                     <h3><%= notes.date %></h3>
-                    <h3><%= notes.note %></h3>
+                    <h3><%= notes.subject %></h3>
                     <img src=<%= notes.notesImgUrl %> /> 
                     <button type="button" class="btn btn-info main-notes__header-btn"><a href="/secure/note/<%= token %>/<%= notes.noteId %>">Get Info</a></button>
                 </div>
