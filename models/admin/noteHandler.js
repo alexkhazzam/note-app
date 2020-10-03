@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 exports.NoteHandler = class {
-  constructor(title, note, subject, token, imgUrl, date, noteId) {
+  constructor(title, subject, note, token, imgUrl, date, noteId) {
     this.title = title;
     this.subject = subject;
     this.note = note;
@@ -82,7 +82,8 @@ exports.NoteHandler = class {
     });
     correctNote.forEach((note) => {
       if (note.noteId == this.noteId) {
-        noteInfo = note.note;
+        noteInfo = note.subject;
+        console.log(noteInfo);
       }
     });
     return noteInfo;

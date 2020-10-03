@@ -64,5 +64,6 @@ exports.getNoteInfo = (req, res, next) => {
     req.params.noteId
   );
   const noteContent = noteHandler.fetchNoteContent();
+  console.log(noteContent);
   res.render('admin/note', { token: req.params.tokenId, note: noteContent });
 };
